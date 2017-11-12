@@ -29,7 +29,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a,b){ //eslint-disable-line
+function multiply(a,b) { //eslint-disable-line
   return [
     a * b,
     'The product of ' + a + ' and ' + b + ' is ' + (a * b) + '.',
@@ -53,7 +53,7 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a,b,c){ //eslint-disable-line
+function sumAndMultiply(a,b,c) { //eslint-disable-line
   return [
     a + b + c,
     a * b * c,
@@ -81,7 +81,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
 
-function sumArray(testArray){ //eslint-disable-line
+function sumArray(testArray) { //eslint-disable-line
   var localSum = 0;
   var numbersString = '';
   for (var i = 0; i < testArray.length; i++) {
@@ -113,11 +113,22 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(testArray){ //eslint-disable-line
-
+function multiplyArray(testArray) { //eslint-disable-line
+  var localProduct = 1;
+  var numbersString = '';
+  for (var i = 0; i < testArray.length; i++) {
+    localProduct = multiply(localProduct, testArray[i])[0];
+    numbersString += testArray[i] + ',';
+    console.log('localProduct:', localProduct);
+    console.log('numbersString:', numbersString);
+  }
+  return [
+    localProduct,
+    'The numbers ' + numbersString.slice(0, numbersString.length - 1) + ' have a product of ' + localProduct + '.',
+  ];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
